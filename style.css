@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+/* COLORS */
+:root {
+  /* Primary */
+  --scissors-gradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --paper-gradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --rock-gradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  --lizard-gradient: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+  --cyan: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+
+  /* Neutral */
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --white: #fff;
+  --header-outline: hsl(217, 16%, 45%);
+
+  /* Background */
+  --radial-gradient: radial-gradient(
+    ellipse at top,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+}
+
+/* RESET */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--white);
+  font-weight: 600;
+  height: 100vh;
+  background: var(--radial-gradient);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 700px;
+}
+
+.header {
+  width: 90%;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: min(8vw, 2rem);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.8;
+}
+
+.score {
+  line-height: 0.9;
+  background-color: var(--white);
+  padding: min(8vw, 1rem) min(8vw, 3rem);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.score__title {
+  color: var(--score-text);
+  font-size: min(3vw, 1rem);
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+  font-weight: normal;
+}
+
+.score__number {
+  color: var(--dark-text);
+  font-size: min(10vw, 4rem);
+  font-weight: 700;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
