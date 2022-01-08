@@ -24,23 +24,18 @@ function getComputerChoice() {
 
 function getResult() {
   if (USER_CHOICE === COMPUTER_CHOICE) {
-    console.log(SCORE);
     return "Draw";
   } else if (USER_CHOICE === "paper" && COMPUTER_CHOICE === "rock") {
     SCORE += 1;
-    console.log(SCORE);
     return "You win";
   } else if (USER_CHOICE === "rock" && COMPUTER_CHOICE === "scissors") {
     SCORE += 1;
-    console.log(SCORE);
     return "You win";
   } else if (USER_CHOICE === "scissors" && COMPUTER_CHOICE === "paper") {
     SCORE += 1;
-    console.log(SCORE);
     return "You win";
   } else {
     SCORE -= 1;
-    console.log(SCORE);
     return "You lose";
   }
 }
@@ -49,11 +44,13 @@ function getResult() {
 function loadHome() {
   setClass("home");
   const choicesHtml = choices.map((choice) => {
-    return `<button class="circle circle--${choice}" id="${choice}">${
-      choice[0].toUpperCase() + choice.substring([1])
-    }</button>`;
+    return `
+		<button class="circle circle--${choice}" id="${choice}">
+			<img src="./images/icon-${choice}.svg" />`;
   });
-  gameboardEl.innerHTML = choicesHtml.join("");
+  gameboardEl.innerHTML =
+    `<img class="gameboard__triangle" src="./images/bg-triangle.svg" />
+		` + choicesHtml.join("");
 
   const circleEl = document.querySelectorAll(".circle");
   circleEl.forEach((circle) => {
@@ -72,7 +69,7 @@ function loadPlay() {
 		<div class="gameboard__user-side">
       <p class="gameboard__label">You picked</p>
       <button class="circle circle--${USER_CHOICE}" id="${USER_CHOICE}">
-        ${USER_CHOICE}
+			<img src="./images/icon-${USER_CHOICE}.svg" />
       </button>
 		</div>
 		<div class="gameboard__result">
@@ -80,7 +77,7 @@ function loadPlay() {
 		<div class="gameboard__computer-side">
       <p class="gameboard__label">The House picked</p>
       <button class="circle circle--${COMPUTER_CHOICE}" id="${COMPUTER_CHOICE}">
-        ${COMPUTER_CHOICE}
+			<img src="./images/icon-${COMPUTER_CHOICE}.svg" />
       </button>
 		</div>
 	`;
@@ -92,11 +89,11 @@ function loadPlay() {
 // Loads the result screen
 function loadResult() {
   setClass("result");
+  let result = getResult();
   const resultEl = document.querySelector(".gameboard__result");
   scoreEl.textContent = SCORE.toString();
-  console.log(scoreEl.textContent);
   resultEl.innerHTML = `
-			<p gameboard__result-text>${getResult()}</p>
+			<p gameboard__result-text>${result}</p>
 			<button class="gameboard__replay-btn">Play again</button>
 	`;
   const replayBtn = document.querySelector(".gameboard__replay-btn");
