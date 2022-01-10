@@ -263,8 +263,8 @@ body {
   .gameboard {
     justify-content: center;
     max-width: 480px;
-    max-width: 480px;
   }
+
   .gameboard__triangle {
     width: 190.625px;
   }

@@ -91,7 +91,9 @@ function loadResult() {
 	`;
   const replayBtn = document.querySelector(".gameboard__replay-btn");
   replayBtn.addEventListener("click", () => {
-    gameboardEl.style.maxWidth = "700px";
+    gameboardEl.style.maxWidth = null;
+    // If run into problems, use this instead:
+    // element.style.removeProperty("maxWidth");
     loadHome();
   });
 }
