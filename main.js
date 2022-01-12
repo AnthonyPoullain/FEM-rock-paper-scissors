@@ -1,6 +1,9 @@
 // ELEMENTS
 const gameboardEl = document.querySelector(".gameboard");
 const scoreEl = document.querySelector(".score__number");
+const rulesEl = document.querySelector(".rules");
+const rulesBtn = document.querySelector(".rules-btn");
+const closeBtn = document.querySelector(".rules__close");
 
 // GLOBAL VARIABLES
 let USER_CHOICE = null;
@@ -99,3 +102,17 @@ function loadResult() {
 }
 
 loadHome();
+
+document.addEventListener("keyup", function (event) {
+  if (event.keyCode === 27) {
+    closeBtn.click();
+  }
+});
+
+rulesBtn.addEventListener("click", () => {
+  rulesEl.classList.remove("rules--hidden");
+});
+
+closeBtn.addEventListener("click", () => {
+  rulesEl.classList.add("rules--hidden");
+});
