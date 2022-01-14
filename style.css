@@ -45,7 +45,8 @@ body {
   visibility: visible;
   color: var(--white);
   font-weight: 600;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   text-transform: uppercase;
   background: var(--radial-gradient);
   font-family: "Barlow Semi Condensed", sans-serif;
@@ -54,6 +55,11 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
+}
+
+html {
+  height: -webkit-fill-available;
 }
 
 .rules {
@@ -323,19 +329,14 @@ body {
   .rules {
     width: 100vw;
     height: 100vh;
+    height: -webkit-fill-available;
     position: absolute;
+    border-radius: 0;
     top: 0;
     transform: translateY(0%);
     flex-direction: column;
     justify-content: space-around;
   }
-
-  /* .rules__top-bar { */
-  /*   display: flex; */
-  /*   align-items: center; */
-  /*   justify-content: space-between; */
-  /* padding-bottom: 3rem; */
-  /* } */
 
   .rules__title {
     font-size: 3rem;
