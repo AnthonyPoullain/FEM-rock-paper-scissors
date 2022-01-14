@@ -323,7 +323,7 @@ html {
   .gameboard__result {
     order: 3;
     margin: auto 8rem;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
   }
 
   .rules {
